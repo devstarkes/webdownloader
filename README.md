@@ -18,7 +18,7 @@ response = downloader.post_page('https://www.some-not-reliable-site.com/', speci
 ### Proxies usage
 ```python
 from webdownloader import Downloader
-downloader = Downloader(proxy_string_list=['104.144.176.:3128', '102.152.145.103:3128', '157.152.145.103:3128'], change_proxies_manually=True)
+downloader = Downloader(proxy_string_list=['104.144.176.1:3128', '102.152.145.103:3128', '157.152.145.103:3128'], change_proxies_manually=True)
 # from one random proxy (if one of proxies is not working it will take another one)
 page_content = downloader.get_page('https://www.google.com/')
 # from the same proxy
