@@ -1,6 +1,6 @@
 # Instalatiom
 ```sh
-pip install pywebextract
+pip install webdownloader
 ```
 # Downloader
 ### Basic functional

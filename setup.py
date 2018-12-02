@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='webdownloader',
-      version='0.1',
+      version='0.1.1',
       description='webdownloader is a tool for web data extraction',
       long_description=readme(),
 	  classifiers = ['Programming Language :: Python',
