@@ -239,7 +239,24 @@ class Downloader:
         try:
             return requests.utils.dict_from_cookiejar(self.http_requests.cookies)
         except:
+            logging.warning('Cannot get cookies')
             return {}
+
+    def set_session_cookies(self, cookies):
+        """
+        Set cookies from the current session
+            :param self: 
+        """
+        if isinstance(cookies, str):
+            cookies = self.get_dict_cookies_from_text(cookies)
+        if self.use_session:
+            try:
+                for key in cookies.keys():
+                    self.http_requests.cookies.set(key, cookies[key])
+            except:
+                logging.warning('Cannot set cookies')
+        else:
+            logging.error('Session mode is not activated')
 
     def get_cookies_from_file(self, name='cookies'):
         """
